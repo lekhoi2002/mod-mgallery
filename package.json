@@ -1,0 +1,82 @@
+{
+  "name": "@myrthos/mod-mgallery",
+  "version": "0.0.0",
+  "description": "A Hugo gallery module compatible with the Hinode theme",
+  "keywords": [
+    "hugo",
+    "module"
+  ],
+  "main": "index.js",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "prestart": "npm run clean && npm run mod:vendor",
+    "start": "hugo server -s exampleSite --bind=0.0.0.0 --disableFastRender --printI18nWarnings",
+    "prebuild": "npm run clean && npm run mod:vendor",
+    "build": "hugo --gc --minify -s exampleSite",
+    "clean": "rimraf exampleSite/public exampleSite/resources",
+    "mod:clean": "hugo mod clean",
+    "mod:update": "hugo mod get -u ./... && npm run -s mod:vendor && npm run -s mod:tidy",
+    "mod:vendor": "rimraf _vendor && hugo mod vendor",
+    "mod:tidy": "hugo mod tidy && hugo mod tidy -s exampleSite",
+    "postinstall": "npm run -s copy:css && npm run -s copy:js && npm run -s copy:js2 && npm run -s copy:images",
+    "copy:css": "cpy node_modules/lightbox2/dist/css/lightbox.css dist/css/modules/mgallery --rename=lightbox.scss --flat",
+    "copy:js": "cpy node_modules/lightbox2/dist/js/lightbox.js dist/js --flat",
+    "copy:js2": "cpy node_modules/jquery/dist/jquery.js dist/js --flat",
+    "copy:images": "cpy node_modules/lightbox2/dist/images/** dist/images --flat",
+    "test": "npm run -s build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myrthos/mod-mgallery.git"
+  },
+  "author": "Joost Mans",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/myrthos/mod-mgallery/issues"
+  },
+  "homepage": "https://myrthos.net",
+  "devDependencies": {
+    "@semantic-release/exec": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "cpy-cli": "^5.0.0",
+    "hugo-bin": "^0.135.0",
+    "lightbox2": "^2.11.5",
+    "rimraf": "^6.0.1",
+    "semantic-release": "^24.2.0"
+  },
+  "hugo-bin": {
+    "buildTags": "extended"
+  },
+  "release": {
+    "branches": "main",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github",
+      "@semantic-release/npm",
+      [
+        "@semantic-release/exec",
+        {
+          "prepare": "npm install"
+        }
+      ],
+      [
+        "@semantic-release/git",
+        {
+          "assets": [
+            "dist",
+            "package.json",
+            "package-lock.json"
+          ],
+          "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        }
+      ]
+    ]
+  },
+  "dependencies": {
+    "jquery": "^3.7.1"
+  }
+}

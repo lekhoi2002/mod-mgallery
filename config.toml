@@ -1,0 +1,34 @@
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.80.0"
+    max = ""
+
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+
+[params.gallery]
+  enable = true
+  lazyLoad = true
+  modalSize = "xl"
+  thumbnailSize = "400x"
+  animation = true
+  
+  [params.gallery.modal]
+    showCaption = true
+    darkMode = true
+    backgroundColor = "rgba(0,0,0,0.9)"
+
+  [params.gallery.defaults]
+    columns = 3
+    spacing = 3
+    aspectRatio = "4/3"
+
+  [params.gallery.effects]
+    hoverScale = 1.05
+    transitionSpeed = 0.3

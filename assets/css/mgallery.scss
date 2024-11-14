@@ -1,0 +1,55 @@
+.gallery-container {
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    
+    img {
+      transition: transform 0.3s ease;
+    }
+    
+    &:hover {
+      img {
+        transform: scale(1.05);
+      }
+    }
+    
+    a {
+      display: block;
+      cursor: pointer;
+    }
+  }
+}
+
+#galleryModal {
+  .modal-content {
+    background: rgba(0,0,0,0.9);
+  }
+  
+  .modal-header {
+    border: none;
+    padding: 1rem;
+    
+    .btn-close {
+      filter: invert(1);
+    }
+  }
+  
+  .modal-footer {
+    border: none;
+    padding: 1rem;
+    
+    .modal-caption {
+      color: #fff;
+      margin: 0;
+    }
+  }
+}
+
+// Responsive optimizations
+@include media-breakpoint-down(sm) {
+  .gallery-container {
+    .gallery-item figcaption {
+      font-size: 0.875rem;
+    }
+  }
+}
