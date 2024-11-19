@@ -1,16 +1,29 @@
+<!-- home.html -->
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ with .Params.details }}
-    <p>Details: <a href="{{ . }}">{{ . }}</a></p>
-  {{ end }}
-  {{ with .Params.description }}
-    <p>Description: {{ . }}</p>
-  {{ end }}
-  {{ with or .Params.url .Params.details }}
-    <hr>
-  {{ end }}
-  {{ .Content }}
-  {{ range .Site.RegularPages }}
-    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-  {{ end }}
+  <div class="container my-4">
+    <h1 class="display-4">{{ .Title }}</h1>
+    {{ with .Params.details }}
+      <p class="lead">Details: <a href="{{ . }}" class="text-decoration-none">{{ . }}</a></p>
+    {{ end }}
+    {{ with .Params.description }}
+      <p class="text-muted">Description: {{ . }}</p>
+    {{ end }}
+    {{ with or .Params.url .Params.details }}
+      <hr>
+    {{ end }}
+    <div class="content">
+      {{ .Content }}
+    </div>
+    <div class="row mt-4">
+      {{ range .Site.RegularPages }}
+        <div class="col-md-4 mb-3">
+          <div class="card h-100">
+            <div class="card-body">
+              <h2 class="card-title"><a href="{{ .RelPermalink }}" class="stretched-link">{{ .Title }}</a></h2>
+            </div>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
 {{ end }}

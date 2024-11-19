@@ -22,9 +22,6 @@ title = 'Test site for mod-mgallery'
       source = "dist/images"
       target = "static/images"
     [[module.imports.mounts]]
-      source = "dist/js/jquery.js"
-      target = "static/js/jquery.js"
-    [[module.imports.mounts]]
       source = "dist/js/lightbox.js"
       target = "static/js/lightbox.js"
     [[module.imports.mounts]]

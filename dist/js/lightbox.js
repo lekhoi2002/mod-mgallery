@@ -1,38 +1,31 @@
+/* Lightbox functionality replaced with Bootstrap 5 Modal functionality */
 
-/* Updated JavaScript for Bootstrap 5 compatibility */
+document.addEventListener('DOMContentLoaded', function () {
+    // Select all gallery items that should trigger the modal
+    const galleryItems = document.querySelectorAll('.gallery-item a');
 
-document.addEventListener("DOMContentLoaded", function () {
-    const galleryItems = document.querySelectorAll(".gallery-item");
+    galleryItems.forEach(item => {
+        item.addEventListener('click', function (e) {
+            e.preventDefault(); // Prevent default anchor click behavior
 
-    galleryItems.forEach((item) => {
-        item.addEventListener("click", function () {
-            const imgSrc = this.querySelector("img").getAttribute("src");
+            // Get the target image URL from the clicked thumbnail
+            const imageUrl = this.getAttribute('href');
+            const modal = document.querySelector('#lightboxModal');
+            const modalImg = modal.querySelector('.modal-body img');
 
-            // Create Bootstrap modal
-            const modalHtml = `
-                <div class="modal fade" id="galleryModal" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog modal-lg modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-body">
-                                <img src="${imgSrc}" alt="Gallery Image" class="img-fluid" />
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>`;
+            // Set the modal image source to the selected image
+            modalImg.setAttribute('src', imageUrl);
 
-            // Append modal to body and show
-            document.body.insertAdjacentHTML("beforeend", modalHtml);
-            const modalElement = document.getElementById("galleryModal");
-            const modal = new bootstrap.Modal(modalElement);
-            modal.show();
-
-            // Clean up after modal is hidden
-            modalElement.addEventListener("hidden.bs.modal", function () {
-                modalElement.remove();
-            });
+            // Show the modal
+            const bootstrapModal = new bootstrap.Modal(modal);
+            bootstrapModal.show();
         });
+    });
+
+    // Event listener for when the modal is closed, to clear the image source
+    const modal = document.querySelector('#lightboxModal');
+    modal.addEventListener('hidden.bs.modal', function () {
+        const modalImg = modal.querySelector('.modal-body img');
+        modalImg.setAttribute('src', ''); // Clear image to prevent flashing
     });
 });

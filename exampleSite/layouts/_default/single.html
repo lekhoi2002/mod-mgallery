@@ -1,4 +1,9 @@
+<!-- single.html -->
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
+  <div class="container my-4">
+    <h1 class="display-4">{{ .Title }}</h1>
+    <div class="content">
+      {{ .Content }}
+    </div>
+  </div>
 {{ end }}
