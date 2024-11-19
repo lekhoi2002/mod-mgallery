@@ -1,3 +1,3 @@
-module github.com/myrthos/mod-mgallery
+module github.com/lekhoi2002/mod-mgallery
 
 go 1.19

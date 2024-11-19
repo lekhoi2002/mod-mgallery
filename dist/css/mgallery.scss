@@ -1,95 +1,45 @@
-// Gallery CSS
-// CSpell: ignore mgallery lightbox
 
-// Define the masonry container
-.masonry-container {
-  display: flex;
-  flex-flow: wrap;  
-  flex-direction: row;
-  width: 100%;
-  padding-right: 8px;
-  padding-left: 8px;
-  margin-right: auto;
-  margin-left: auto;
+/* Updated styles for Bootstrap 5 compatibility */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
 }
 
-// Define the masonry classes for the columns 2..5
-$masonry-columns: (
-  "2": 2,
-  "3": 3,
-  "4": 4,
-  "5": 5
-) !default;
-
-@each $key, $cols in $masonry-columns {
-  .masonry-#{$key} {
-    -ms-column-count: #{$cols}; 
-    -webkit-column-count: #{$cols}; /* Chrome, Safari, Opera */
-    -moz-column-count: #{$cols}; /* Firefox */
-    column-count: #{$cols};
-  }
+.gallery-item {
+    flex: 1 1 calc(25% - 1rem);
+    max-width: calc(25% - 1rem);
+    position: relative;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.2s;
 }
 
-// Define the class for the different gap sizes
-$masonry-gaps: (
-  "0"  : 0,
-  "xs" : 0.1rem,
-  "s"  : 0.25rem,
-  "m"  : 0.5rem,
-  "l"  : 1rem,
-  "xl" : 1.5rem,
-  "xxl": 2rem
-) !default;
-
-// The masonry column gap
-@each $key, $gap in $masonry-gaps {
-  .masonry-gap-#{$key} {
-    -ms-column-gap: #{$gap};
-    -moz-column-gap: #{$gap};
-    -webkit-column-gap: #{$gap}; 
-    column-gap: #{$gap};  
-  }
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    transition: transform 0.3s ease;
 }
 
-// Override for grid column gap
-@each $key, $gutter in $masonry-gaps {
-  .grid-gap-#{$key} {
-    --bs-gutter-x: #{$gutter};
-  }
+.gallery-item:hover img {
+    transform: scale(1.05);
 }
 
-// The row padding for both grid and masonry
-@each $key, $gap in $masonry-gaps {
-  .gallery-pad-#{$key} {
-    padding-bottom: #{$gap};
-  }
+/* Bootstrap modal customization */
+.modal .modal-dialog {
+    max-width: 90%;
+    margin: auto;
 }
 
-// Define the image class in a masonry
-.masonry-1 img, .masonry-2 img, .masonry-3 img, .masonry-4 img, .masonry-5 img { 
-  flex-direction: column;
-  position: relative;
-  width: 100%; 
+.modal .modal-body img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0.5rem;
 }
-
-// Define the class for the corner radius per column
-$gallery-radius: (
-  "1": 14px,
-  "2": 12px,
-  "3": 10px,
-  "4": 8px,
-  "5": 6px
-) !default;
-
-@each $key, $radius in $gallery-radius {
-  .gallery-radius-#{$key} {
-    border-radius: #{$radius};
-  }
-}
-
-// Additional ratio for bootstrap ratios
-.ratio-3x2 {
-  --bs-aspect-ratio: 66.67%;
-}
-
-@import "modules/mgallery/lightbox.scss";
