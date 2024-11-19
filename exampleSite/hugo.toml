@@ -9,12 +9,12 @@ title = 'Test site for mod-mgallery'
 
 
 [module]
-  replacements = 'github.com/myrthos/mod-mgallery -> ../..'
+  replacements = 'github.com/lekhoi2002/mod-mgallery -> ../..'
   [[module.mounts]]
     source = "static"
     target = "static"
   [[module.imports]]
-    path = "github.com/myrthos/mod-mgallery"
+    path = "github.com/lekhoi2002/mod-mgallery"
     [[module.imports.mounts]]
       source = "dist/css/modules/mgallery/lightbox.scss"
       target = "static/css/lightbox.css"
