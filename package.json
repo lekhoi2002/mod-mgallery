@@ -1,5 +1,5 @@
 {
-  "name": "@myrthos/mod-mgallery",
+  "name": "@lekhoi2002/mod-mgallery",
   "version": "0.0.0",
   "description": "A Hugo gallery module compatible with the Hinode theme",
   "keywords": [
@@ -30,14 +30,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/myrthos/mod-mgallery.git"
+    "url": "git+https://github.com/lekhoi2002/mod-mgallery.git"
   },
   "author": "Joost Mans",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/myrthos/mod-mgallery/issues"
+    "url": "https://github.com/lekhoi2002/mod-mgallery/issues"
   },
-  "homepage": "https://myrthos.net",
+  "homepage": "https://lekhoi2002.net",
   "devDependencies": {
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/git": "^10.0.1",

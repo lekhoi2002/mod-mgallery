@@ -1,4 +1,4 @@
-<!-- CSpell:ignore Hinode mgallery Lightbox shortcode frontmatter mgalleryblog Myrthos -->
+<!-- CSpell:ignore Hinode mgallery Lightbox shortcode frontmatter mgalleryblog lekhoi2002 -->
 # Hugo/Hinode Module - mgallery
 
 <!-- Markdownlint-disable MD033 -->
@@ -16,20 +16,20 @@
     <a href="https://gethinode.com" alt="Hinode theme">
         <img src="https://img.shields.io/badge/theme-hinode-blue">
     </a>
-    <a href="https://github.com/myrthos/mod-mgallery/releases" alt="Last release">
-        <img src="https://img.shields.io/github/v/release/myrthos/mod-mgallery">
+    <a href="https://github.com/lekhoi2002/mod-mgallery/releases" alt="Last release">
+        <img src="https://img.shields.io/github/v/release/lekhoi2002/mod-mgallery">
     </a>
-    <a href="https://github.com/myrthos/mod-mgallery/releases" alt="Release date">
-        <img src="https://img.shields.io/github/release-date/myrthos/mod-mgallery">
+    <a href="https://github.com/lekhoi2002/mod-mgallery/releases" alt="Release date">
+        <img src="https://img.shields.io/github/release-date/lekhoi2002/mod-mgallery">
     </a>
-    <a href="https://github.com/myrthos/mod-mgallery/commits/main" alt="Last commit">
-        <img src="https://img.shields.io/github/last-commit/myrthos/mod-mgallery/main">
+    <a href="https://github.com/lekhoi2002/mod-mgallery/commits/main" alt="Last commit">
+        <img src="https://img.shields.io/github/last-commit/lekhoi2002/mod-mgallery/main">
     </a>
-    <a href="https://github.com/myrthos/mod-mgallery/labels/bug" alt="bugs">
-        <img src="https://img.shields.io/github/issues/myrthos/mod-mgallery/bug">
+    <a href="https://github.com/lekhoi2002/mod-mgallery/labels/bug" alt="bugs">
+        <img src="https://img.shields.io/github/issues/lekhoi2002/mod-mgallery/bug">
     </a>
-    <a href="https://github.com/myrthos/mod-mgallery/blob/main/LICENSE" alt="License">
-        <img src="https://img.shields.io/github/license/myrthos/mod-mgallery">
+    <a href="https://github.com/lekhoi2002/mod-mgallery/blob/main/LICENSE" alt="License">
+        <img src="https://img.shields.io/github/license/lekhoi2002/mod-mgallery">
     </a>
 </p>
 
@@ -57,6 +57,6 @@ Hinode is a clean blog theme for [Hugo][hugo], an open-source static site genera
 [repository]: https://github.com/gethinode/hinode.git
 [repository_template]: https://github.com/gethinode/template.git
 [lightbox]: https://lokeshdhakar.com/projects/lightbox2/
-[mgalleryblog]: https://myrthos.net/blog/mgallery/
-[mgallerydoc]: https://myrthos.net/docs/shortcodes/mgallery/overview/
-[mgalleryinstall]: https://myrthos.net/docs/shortcodes/mgallery/installation/
+[mgalleryblog]: https://lekhoi2002.net/blog/mgallery/
+[mgallerydoc]: https://lekhoi2002.net/docs/shortcodes/mgallery/overview/
+[mgalleryinstall]: https://lekhoi2002.net/docs/shortcodes/mgallery/installation/
